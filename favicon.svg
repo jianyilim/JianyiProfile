@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <!-- Neumorphic Shadows -->
+    <filter id="neumorphism" x="-50%" y="-50%" width="200%" height="200%">
+      <!-- Light Shadow (Top Left) -->
+      <feDropShadow dx="-15" dy="-15" stdDeviation="20" flood-color="#ffffff" flood-opacity="1" result="lightShadow"/>
+      <!-- Dark Shadow (Bottom Right) -->
+      <feDropShadow dx="15" dy="15" stdDeviation="20" flood-color="#a3b1c6" flood-opacity="0.6" result="darkShadow"/>
+      <!-- Merge Shadows with Source -->
+      <feMerge>
+        <feMergeNode in="darkShadow"/>
+        <feMergeNode in="lightShadow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Text Gradient -->
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00b4d8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4361ee;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Base Shape with Neumorphic Filter -->
+  <!-- Note: reduced size slightly to prevent clipping of shadows -->
+  <rect x="56" y="56" width="400" height="400" rx="100" fill="#e0e5ec" filter="url(#neumorphism)" />
+  
+  <!-- Content -->
+  <text x="50%" y="54%" font-family="Arial, sans-serif" font-weight="bold" font-size="280" fill="url(#textGrad)" text-anchor="middle" dominant-baseline="middle">J</text>
+</svg>

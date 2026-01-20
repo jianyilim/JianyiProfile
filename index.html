@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lim Jianyi | Senior Software Engineering Manager</title>
+    <meta name="description"
+        content="Portfolio of Lim Jianyi - Experienced Software Engineering Manager and Solution Architect.">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="./style.css?v=1.0">
+</head>
+
+<body
+    class="bg-background text-text-primary font-sans antialiased selection:bg-primary selection:text-black overflow-x-hidden">
+
+    <!-- Fixed Background Elements -->
+    <!-- Background is now handled by body color for clean neumorphism -->
+    <div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
+        <!-- Neumorphism emphasizes shape and shadow over background blobs -->
+    </div>
+
+    <header
+        class="fixed top-0 left-0 w-full z-50 bg-background/90 backdrop-blur-md border-b border-black/5 py-4 transition-all duration-300 shadow-sm">
+        <div class="max-w-[1200px] mx-auto px-6 md:px-8 flex justify-between items-center">
+            <a href="#"
+                class="text-2xl font-bold font-display text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary tracking-tight hover:scale-105 transition-transform duration-300">Jianyi.</a>
+            <div class="hidden md:flex gap-8">
+                <a href="#about"
+                    class="text-sm uppercase tracking-wider text-text-secondary font-medium hover:text-primary transition-colors relative group">
+                    About
+                    <span
+                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#experience"
+                    class="text-sm uppercase tracking-wider text-text-secondary font-medium hover:text-primary transition-colors relative group">
+                    Experience
+                    <span
+                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#skills"
+                    class="text-sm uppercase tracking-wider text-text-secondary font-medium hover:text-primary transition-colors relative group">
+                    Skills
+                    <span
+                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#contact"
+                    class="text-sm uppercase tracking-wider text-text-secondary font-medium hover:text-primary transition-colors relative group">
+                    Contact
+                    <span
+                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="min-h-screen flex items-center pt-20 relative">
+            <div class="max-w-[1200px] mx-auto px-6 md:px-8 w-full relative z-10">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="animate-slide-up">
+                        <div
+                            class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/30 bg-primary/10 text-primary text-xs font-semibold tracking-wider uppercase mb-6 backdrop-blur-sm">
+                            <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                            Available for new opportunities
+                        </div>
+                        <h1 class="text-6xl md:text-8xl font-bold font-display leading-[1] mb-6 tracking-tight">
+                            Create.<br>
+                            Lead.<br>
+                            <span class="text-gradient" id="typing-text" data-text="Innovate."></span><span
+                                class="animate-pulse text-primary">_</span>
+                        </h1>
+                        <p
+                            class="text-xl text-text-secondary mb-10 max-w-lg leading-relaxed border-l-2 border-black/10 pl-6">
+                            Passionate about inspiring others through effective people management and driving innovation
+                            in technology.
+                        </p>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="#contact" class="neu-btn-primary group relative overflow-hidden">
+                                <span
+                                    class="relative z-10 group-hover:text-white transition-colors duration-300 flex items-center gap-2">
+                                    Let's Talk <i
+                                        class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                                </span>
+                            </a>
+                            <a href="#experience"
+                                class="px-8 py-3 rounded-full font-semibold text-text-secondary neu-convex hover:text-primary transition-all duration-300">
+                                Explore Career
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Hero Visual -->
+                    <div class="relative hidden md:block animate-float">
+                        <div class="relative z-10 neu-flat p-8 tilt-card transform-gpu">
+                            <div class="flex items-center justify-between mb-8 border-b border-black/10 pb-4">
+                                <div class="flex gap-2">
+                                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                                </div>
+                                <div class="text-xs text-text-secondary font-mono">profile.cs</div>
+                            </div>
+                            <div class="space-y-4 font-mono text-sm leading-relaxed">
+                                <div class="flex gap-4">
+                                    <span class="text-text-secondary w-6">1</span>
+                                    <span><span class="text-purple-400">var</span> <span
+                                            class="text-yellow-300">Jianyi</span> = <span
+                                            class="text-purple-400">new</span> {</span>
+                                </div>
+                                <div class="flex gap-4">
+                                    <span class="text-text-secondary w-6">2</span>
+                                    <span class="pl-4">Role = <span class="text-green-400">"Eng. Manager"</span>,</span>
+                                </div>
+                                <div class="flex gap-4">
+                                    <span class="text-text-secondary w-6">3</span>
+                                    <span class="pl-4">ExperienceInYears = <span id="years-experience"
+                                            class="text-orange-400">>12</span>,</span>
+                                </div>
+                                <div class="flex gap-4">
+                                    <span class="text-text-secondary w-6">4</span>
+                                    <span class="pl-4">Passion = [<span class="text-green-400">"Innovation"</span>,
+                                        <span class="text-green-400">"People"</span>],</span>
+                                </div>
+                                <div class="flex gap-4">
+                                    <span class="text-text-secondary w-6">5</span>
+                                    <span class="pl-4">Status = <span
+                                            class="text-blue-400">"AwaitingChallenge",</span></span>
+                                </div>
+                                <div class="flex gap-4">
+                                    <span class="text-text-secondary w-6">6</span>
+                                    <span>};</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Decorative elements behind card -->
+                        <div
+                            class="absolute -top-10 -right-10 w-24 h-24 bg-primary/20 rounded-full blur-xl -z-10 animate-pulse-slow">
+                        </div>
+                        <div class="absolute -bottom-5 -left-5 w-32 h-32 bg-secondary/20 rounded-full blur-xl -z-10 animate-pulse-slow"
+                            style="animation-delay: 1s;"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-32 relative">
+            <div class="max-w-[1200px] mx-auto px-6 md:px-8">
+                <div class="mb-16 reveal">
+                    <span
+                        class="text-primary font-bold tracking-widest uppercase text-xs border border-primary/20 px-3 py-1 rounded-full">About
+                        Me</span>
+                    <h2 class="text-4xl md:text-5xl font-bold font-display mt-6 leading-tight">Driving Tech <br><span
+                            class="text-gradient">Innovation & Growth</span></h2>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="p-8 neu-flat hover:-translate-y-2 transition-transform duration-500 reveal"
+                        style="transition-delay: 100ms;">
+                        <div
+                            class="w-16 h-16 neu-pressed rounded-full flex items-center justify-center text-primary mb-6">
+                            <i class="fas fa-users-cog text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 font-display">Leadership</h3>
+                        <p class="text-text-secondary leading-relaxed">
+                            Actively involved in strategic planning, performance improvement, and decision-making.
+                            Skilled in mentoring teams for technical enhancement and career growth.
+                        </p>
+                    </div>
+
+                    <div class="p-8 neu-flat hover:-translate-y-2 transition-transform duration-500 reveal"
+                        style="transition-delay: 200ms;">
+                        <div
+                            class="w-16 h-16 neu-pressed rounded-full flex items-center justify-center text-secondary mb-6">
+                            <i class="fas fa-layer-group text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 font-display">Architecture</h3>
+                        <p class="text-text-secondary leading-relaxed">
+                            Experienced systems architect skilled in end-to-end design across various domains.
+                            Proficient in both Scrum and Waterfall methodologies.
+                        </p>
+                    </div>
+
+                    <div class="p-8 neu-flat hover:-translate-y-2 transition-transform duration-500 reveal"
+                        style="transition-delay: 300ms;">
+                        <div
+                            class="w-16 h-16 neu-pressed rounded-full flex items-center justify-center text-purple-400 mb-6">
+                            <i class="fas fa-terminal text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 font-display">DevOps</h3>
+                        <p class="text-text-secondary leading-relaxed">
+                            Designed and implemented fully automated CI/CD pipelines. Managed efficient software
+                            deployment and high-quality delivery protocols.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-32 relative overflow-hidden">
+            <!-- Background Line -->
+            <div
+                class="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-primary/20 to-transparent hidden md:block">
+            </div>
+
+            <div class="max-w-[1200px] mx-auto px-6 md:px-8 relative z-10">
+                <div class="text-center mb-24 reveal">
+                    <span
+                        class="text-primary font-bold tracking-widest uppercase text-xs border border-primary/20 px-3 py-1 rounded-full">Career
+                        Path</span>
+                    <h2 class="text-4xl md:text-5xl font-bold font-display mt-6">Professional Experience</h2>
+                </div>
+
+                <div class="space-y-24">
+                    <!-- Appspace -->
+                    <div class="group relative grid md:grid-cols-2 gap-12 items-start reveal">
+                        <div class="md:text-right order-2 md:order-1 sticky top-32 self-start">
+                            <span class="inline-block text-primary font-display font-semibold mb-2">April 2022 –
+                                Present</span>
+                            <h3 class="text-3xl font-bold mb-1">Senior Software Engineering Manager</h3>
+                            <div class="text-xl text-text-secondary mb-4">Appspace (M) Sdn Bhd</div>
+                            <p class="text-text-secondary italic mb-4">Workplace experience platform (Digital Signage,
+                                Space Reservation, Intranet).</p>
+                            <div class="flex flex-wrap gap-2 md:justify-end">
+                                <span
+                                    class="px-3 py-1 rounded-full bg-white/5 text-xs text-text-secondary border border-white/5">.NET
+                                    8</span>
+                                <span
+                                    class="px-3 py-1 rounded-full bg-white/5 text-xs text-text-secondary border border-white/5">GCP</span>
+                                <span
+                                    class="px-3 py-1 rounded-full bg-white/5 text-xs text-text-secondary border border-white/5">K8s</span>
+                                <span
+                                    class="px-3 py-1 rounded-full bg-white/5 text-xs text-text-secondary border border-white/5">MongoDB</span>
+                            </div>
+                        </div>
+
+                        <div
+                            class="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-primary shadow-[0_0_20px_rgba(0,242,255,0.5)] z-20 hidden md:block group-hover:scale-150 transition-transform duration-300 top-2">
+                            <div class="absolute inset-0 rounded-full bg-primary animate-ping opacity-75"></div>
+                        </div>
+
+                        <div class="order-1 md:order-2">
+                            <div class="neu-flat p-8 tilt-card hover:border-primary/30 transition-colors">
+                                <ul class="space-y-4 text-gray-700 text-sm list-none">
+                                    <li class="flex gap-3"><i class="fas fa-check text-primary mt-1 shrink-0"></i>
+                                        <span>Align and communicate with stakeholders about software development
+                                            strategies and delivery.</span>
+                                    </li>
+                                    <li class="flex gap-3"><i class="fas fa-check text-primary mt-1 shrink-0"></i>
+                                        <span>Lead a diverse team of over 11 members, including developers, team leads,
+                                            and managers. Responsible for project and resource planning, project
+                                            tracking, and risk management.</span>
+                                    </li>
+                                    <li class="flex gap-3"><i class="fas fa-check text-primary mt-1 shrink-0"></i>
+                                        <span>Built the escalation team starting from 0 to 1 Tech Lead, 5 Senior
+                                            Developers, and 2 Junior Developers, leading full hiring, onboarding, and
+                                            mentoring cycles.</span>
+                                    </li>
+                                    <li class="flex gap-3"><i class="fas fa-check text-primary mt-1 shrink-0"></i>
+                                        <span>Increased issue resolution efficiency, handling 80% of all production
+                                            escalation tickets, significantly reducing load on feature teams.</span>
+                                    </li>
+                                    <li class="flex gap-3"><i class="fas fa-check text-primary mt-1 shrink-0"></i>
+                                        <span>Primary technical contact during high-impact production incidents for
+                                            customers like Deloitte, Disney, and DPDHL.</span>
+                                    </li>
+                                    <li class="flex gap-3"><i class="fas fa-check text-primary mt-1 shrink-0"></i>
+                                        <span>Led proactive monitoring and performance tuning in GCP/Kubernetes and
+                                            legacy .NET frameworks. Resolved critical memory leaks (120GB crash) and
+                                            deadlocks.</span>
+                                    </li>
+                                    <li class="flex gap-3"><i class="fas fa-check text-primary mt-1 shrink-0"></i>
+                                        <span>Established a global 24/7 on-call support system and implemented PagerDuty
+                                            for automated alerting.</span>
+                                    </li>
+                                    <li class="flex gap-3"><i class="fas fa-check text-primary mt-1 shrink-0"></i>
+                                        <span>Led a cross-functional team in developing space reservation features using
+                                            .NET 8, Node.js, MongoDB, RabbitMQ, and Redis.</span>
+                                    </li>
+                                    <li class="flex gap-3"><i class="fas fa-check text-primary mt-1 shrink-0"></i>
+                                        <span>Led the migration of a legacy Windows-based file system to Google Cloud
+                                            Object Storage.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Nettium -->
+                    <div class="group relative grid md:grid-cols-2 gap-12 items-start reveal">
+                        <div class="order-2 md:order-2 sticky top-32 self-start">
+                            <span class="inline-block text-secondary font-display font-semibold mb-2">Jun 2020 –
+                                2022</span>
+                            <h3 class="text-3xl font-bold mb-1">Team Lead</h3>
+                            <div class="text-xl text-text-secondary mb-4">Nettium Sdn Bhd</div>
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="px-3 py-1 rounded-full bg-white/5 text-xs text-text-secondary border border-white/5">DDD</span>
+                                <span
+                                    class="px-3 py-1 rounded-full bg-white/5 text-xs text-text-secondary border border-white/5">RabbitMQ</span>
+                                <span
+                                    class="px-3 py-1 rounded-full bg-white/5 text-xs text-text-secondary border border-white/5">Blazor</span>
+                                <span
+                                    class="px-3 py-1 rounded-full bg-white/5 text-xs text-text-secondary border border-white/5">Alibaba
+                                    Cloud</span>
+                            </div>
+                        </div>
+
+                        <div
+                            class="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-secondary shadow-[0_0_20px_rgba(67,97,238,0.5)] z-20 hidden md:block group-hover:scale-150 transition-transform duration-300 top-2">
+                        </div>
+
+                        <div class="order-1 md:order-1">
+                            <div class="neu-flat p-8 tilt-card hover:border-secondary/30 transition-colors">
+                                <ul class="space-y-4 text-gray-700 text-sm list-none">
+                                    <li class="flex gap-3"><i class="fas fa-check text-secondary mt-1 shrink-0"></i>
+                                        <span>Led a team of 12 developers modernizing a legacy .NET Framework system to
+                                            .NET Core using DDD.</span>
+                                    </li>
+                                    <li class="flex gap-3"><i class="fas fa-check text-secondary mt-1 shrink-0"></i>
+                                        <span>Improved system performance via async programming, optimized queries, and
+                                            distributed tracing.</span>
+                                    </li>
+                                    <li class="flex gap-3"><i class="fas fa-check text-secondary mt-1 shrink-0"></i>
+                                        <span>Planned and contributed to the full software lifecycle, including
+                                            architectural design and deployment to Alibaba Cloud (Kubernetes).</span>
+                                    </li>
+                                    <li class="flex gap-3"><i class="fas fa-check text-secondary mt-1 shrink-0"></i>
+                                        <span>Led a team of 3 developers to build a Communication Microservice & Admin
+                                            Portal using Blazor.</span>
+                                    </li>
+                                    <li class="flex gap-3"><i class="fas fa-check text-secondary mt-1 shrink-0"></i>
+                                        <span>Utilized RabbitMQ, Entity Framework with MySQL, and OData protocol.</span>
+                                    </li>
+                                    <li class="flex gap-3"><i class="fas fa-check text-secondary mt-1 shrink-0"></i>
+                                        <span>Oversaw team growth, hiring, and performance management for in-house and
+                                            outsourced developers.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dassault Systèmes -->
+                    <div class="group relative grid md:grid-cols-2 gap-12 items-start reveal">
+                        <div class="md:text-right order-2 md:order-1 sticky top-32 self-start">
+                            <span class="inline-block text-text-secondary font-display font-semibold mb-2">April 2016 –
+                                2020</span>
+                            <h3 class="text-3xl font-bold mb-1">Technical Lead / Principal Consultant</h3>
+                            <div class="text-xl text-text-secondary">Dassault Systèmes</div>
+                        </div>
+                        <div
+                            class="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-white/50 z-20 hidden md:block group-hover:scale-150 transition-transform duration-300 top-2">
+                        </div>
+                        <div class="order-1 md:order-2">
+                            <div class="neu-flat p-8 tilt-card hover:border-white/30 transition-colors">
+                                <ul class="space-y-4 text-gray-700 text-sm list-none">
+                                    <li class="flex gap-3"><i class="fas fa-check text-indigo-500 mt-1 shrink-0"></i>
+                                        <span>Supervise deployments, provide troubleshooting, and conduct research on
+                                            system design.</span>
+                                    </li>
+                                    <li class="flex gap-3"><i class="fas fa-check text-indigo-500 mt-1 shrink-0"></i>
+                                        <span>Work closely with product teams to define and prioritize partner feature
+                                            requests.</span>
+                                    </li>
+                                    <li class="flex gap-3"><i class="fas fa-check text-indigo-500 mt-1 shrink-0"></i>
+                                        <span>Install, integrate, and deploy products in client environments. lead
+                                            detailed architectural dialogues.</span>
+                                    </li>
+                                    <li class="flex gap-3"><i class="fas fa-check text-indigo-500 mt-1 shrink-0"></i>
+                                        <span>Lead contributor on Delmia Quintiq’s largest project—a railway timetable
+                                            solution for Italy.</span>
+                                    </li>
+                                    <li class="flex gap-3"><i class="fas fa-check text-indigo-500 mt-1 shrink-0"></i>
+                                        <span>Managed project scope, schedule, status, and documentation.</span>
+                                    </li>
+                                    <li class="flex gap-3"><i class="fas fa-check text-indigo-500 mt-1 shrink-0"></i>
+                                        <span>Worked on international projects across Asia-Pacific, Europe, and America
+                                            (logistic, railway, workforce planning).</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- OpenSys -->
+                    <div class="group relative grid md:grid-cols-2 gap-12 items-start reveal">
+                        <div class="order-2 md:order-2 sticky top-32 self-start">
+                            <span class="inline-block text-text-secondary font-display font-semibold mb-2">April 2013 –
+                                April 2016</span>
+                            <h3 class="text-3xl font-bold mb-1">Senior Systems Engineer</h3>
+                            <div class="text-xl text-text-secondary">OpenSys (M) Berhad</div>
+                        </div>
+                        <div
+                            class="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-white/30 z-20 hidden md:block group-hover:scale-150 transition-transform duration-300 top-2">
+                        </div>
+                        <div class="order-1 md:order-1">
+                            <div class="neu-flat p-8 tilt-card hover:border-white/30 transition-colors">
+                                <ul class="space-y-4 text-gray-700 text-sm list-none">
+                                    <li class="flex gap-3"><i class="fas fa-check text-emerald-500 mt-1 shrink-0"></i>
+                                        <span>Build, test and deploy scalable, highly available and modular software
+                                            products.</span>
+                                    </li>
+                                    <li class="flex gap-3"><i class="fas fa-check text-emerald-500 mt-1 shrink-0"></i>
+                                        <span>Lead a small group of around 3 people. Trained and managed a team of
+                                            developers.</span>
+                                    </li>
+                                    <li class="flex gap-3"><i class="fas fa-check text-emerald-500 mt-1 shrink-0"></i>
+                                        <span>Worked closely with clients to establish problem specifications and system
+                                            designs.</span>
+                                    </li>
+                                    <li class="flex gap-3"><i class="fas fa-check text-emerald-500 mt-1 shrink-0"></i>
+                                        <span>Led multiple projects with local banks (CIMB, Hong Leong Bank, Maybank,
+                                            AEON Credit).</span>
+                                    </li>
+                                    <li class="flex gap-3"><i class="fas fa-check text-emerald-500 mt-1 shrink-0"></i>
+                                        <span>Acted as the primary technical lead for cash recycling machines and teller
+                                            machine projects.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-32 relative">
+            <div class="max-w-[1200px] mx-auto px-6 md:px-8">
+                <div class="mb-16 text-center reveal">
+                    <span
+                        class="text-primary font-bold tracking-widest uppercase text-xs border border-primary/20 px-3 py-1 rounded-full">Expertise</span>
+                    <h2 class="text-4xl md:text-5xl font-bold font-display mt-6">Technical Arsenal</h2>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-4 reveal">
+                    <!-- Standardized Skill Tags with Neumorphism -->
+                    <div
+                        class="group relative px-6 py-3 rounded-xl neu-convex hover:neu-flat transition-all duration-300 cursor-default hover:-translate-y-1">
+                        <div
+                            class="absolute inset-0 bg-primary/20 blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl">
+                        </div>
+                        <div class="relative flex items-center gap-3">
+                            <i class="fas fa-code text-primary text-xl"></i>
+                            <span class="font-semibold text-lg">C# / .net</span>
+                        </div>
+                    </div>
+
+                    <div
+                        class="group relative px-6 py-3 rounded-xl neu-convex hover:neu-flat transition-all duration-300 cursor-default hover:-translate-y-1">
+                        <div
+                            class="absolute inset-0 bg-secondary/20 blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl">
+                        </div>
+                        <div class="relative flex items-center gap-3">
+                            <i class="fab fa-java text-secondary text-xl"></i>
+                            <span class="font-semibold text-lg">Java</span>
+                        </div>
+                    </div>
+
+                    <div
+                        class="group relative px-6 py-3 rounded-xl neu-convex hover:neu-flat transition-all duration-300 cursor-default hover:-translate-y-1">
+                        <div
+                            class="absolute inset-0 bg-yellow-400/20 blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl">
+                        </div>
+                        <div class="relative flex items-center gap-3">
+                            <i class="fab fa-js text-yellow-400 text-xl"></i>
+                            <span class="font-semibold text-lg">Node.js</span>
+                        </div>
+                    </div>
+
+                    <div
+                        class="group relative px-6 py-3 rounded-xl neu-convex hover:neu-flat transition-all duration-300 cursor-default hover:-translate-y-1">
+                        <div
+                            class="absolute inset-0 bg-blue-500/20 blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl">
+                        </div>
+                        <div class="relative flex items-center gap-3">
+                            <i class="fab fa-microsoft text-blue-500 text-xl"></i>
+                            <span class="font-semibold text-lg">Blazor / MVC</span>
+                        </div>
+                    </div>
+
+                    <div
+                        class="group relative px-6 py-3 rounded-xl neu-convex hover:neu-flat transition-all duration-300 cursor-default hover:-translate-y-1">
+                        <div
+                            class="absolute inset-0 bg-green-500/20 blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl">
+                        </div>
+                        <div class="relative flex items-center gap-3">
+                            <i class="fas fa-database text-green-500 text-xl"></i>
+                            <span class="font-semibold text-lg">MongoDB / SQL</span>
+                        </div>
+                    </div>
+
+                    <div
+                        class="group relative px-6 py-3 rounded-xl neu-convex hover:neu-flat transition-all duration-300 cursor-default hover:-translate-y-1">
+                        <div
+                            class="absolute inset-0 bg-purple-500/20 blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl">
+                        </div>
+                        <div class="relative flex items-center gap-3">
+                            <i class="fas fa-dharmachakra text-purple-500 text-xl"></i>
+                            <span class="font-semibold text-lg">Kubernetes</span>
+                        </div>
+                    </div>
+
+                    <div
+                        class="group relative px-6 py-3 rounded-xl neu-convex hover:neu-flat transition-all duration-300 cursor-default hover:-translate-y-1">
+                        <div
+                            class="absolute inset-0 bg-orange-500/20 blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl">
+                        </div>
+                        <div class="relative flex items-center gap-3">
+                            <i class="fas fa-infinity text-orange-500 text-xl"></i>
+                            <span class="font-semibold text-lg">CI/CD</span>
+                        </div>
+                    </div>
+                    <div
+                        class="group relative px-6 py-3 rounded-xl neu-convex hover:neu-flat transition-all duration-300 cursor-default hover:-translate-y-1">
+                        <div
+                            class="absolute inset-0 bg-cyan-400/20 blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl">
+                        </div>
+                        <div class="relative flex items-center gap-3">
+                            <i class="fas fa-mobile-alt text-cyan-400 text-xl"></i>
+                            <span class="font-semibold text-lg">Flutter</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA / Footer -->
+        <footer id="contact" class="py-20 relative bg-background">
+            <div class="max-w-[1200px] mx-auto px-8 relative z-10">
+                <div class="neu-flat p-12 text-center relative overflow-hidden reveal">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-[80px]"></div>
+                    <div class="absolute bottom-0 left-0 w-64 h-64 bg-secondary/10 rounded-full blur-[80px]"></div>
+
+                    <h2 class="text-3xl md:text-5xl font-bold font-display mb-8">Ready to innovate together?</h2>
+
+                    <div class="flex flex-wrap justify-center gap-4 mb-12">
+                        <a href="mailto:jianyilim@gmail.com"
+                            class="neu-btn-primary hover:scale-105 transition-transform duration-300">
+                            Say Hello
+                        </a>
+                        <a href="content/Lim%20Jianyi%20(2025).pdf" download="Lim_Jianyi_Resume_2025.pdf"
+                            target="_blank"
+                            class="px-8 py-3 rounded-full font-semibold neu-convex hover:text-primary transition-colors">
+                            Download Resume
+                        </a>
+                    </div>
+
+                    <div class="flex flex-wrap justify-center gap-8 text-text-secondary text-sm">
+                        <a href="mailto:jianyilim@gmail.com"
+                            class="hover:text-primary transition-colors flex items-center gap-2">
+                            <i class="fas fa-envelope text-lg"></i> jianyilim@gmail.com
+                        </a>
+                        <a href="tel:+60178788187" class="hover:text-primary transition-colors flex items-center gap-2">
+                            <i class="fas fa-phone text-lg"></i> +60178788187
+                        </a>
+                        <span class="flex items-center gap-2">
+                            <i class="fas fa-map-marker-alt text-lg"></i> Kuala Lumpur
+                        </span>
+                        <a href="https://www.linkedin.com/in/jianyi-lim-88a48b197/" target="_blank"
+                            class="hover:text-primary transition-colors flex items-center gap-2">
+                            <i class="fab fa-linkedin text-lg"></i> LinkedIn
+                        </a>
+                    </div>
+                </div>
+                <div class="text-center mt-12 text-text-secondary text-sm">
+                    © 2026 Lim Jianyi. Crafted with creativity.
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

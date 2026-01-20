@@ -1,0 +1,178 @@
+@import "tailwindcss";
+
+@theme {
+    /* Light Neumorphic Color */
+    --color-background: #e0e5ec;
+    --color-surface: #e0e5ec;
+
+    --color-primary: #00b4d8;
+    /* Slightly darker cyan for contrast on light */
+    --color-secondary: #4361ee;
+    --color-accent: #ff0055;
+
+    /* Text colors - Dark for light mode */
+    --color-text-primary: #2d3748;
+    --color-text-secondary: #718096;
+
+    --font-sans: 'Inter', sans-serif;
+    --font-display: 'Outfit', sans-serif;
+
+    --ease-neu: cubic-bezier(0.4, 0, 0.2, 1);
+
+    --animate-float: float 6s ease-in-out infinite;
+    --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    --animate-slide-up: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+
+    @keyframes float {
+
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-20px);
+        }
+    }
+
+    @keyframes slideUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+/* Light Neumorphic Utilities */
+
+@utility neu-base {
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+}
+
+@utility neu-flat {
+    background: var(--color-background);
+    box-shadow:
+        9px 9px 16px rgb(163, 177, 198, 0.6),
+        -9px -9px 16px rgba(255, 255, 255, 0.5);
+    border-radius: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+@utility neu-flat-sm {
+    background: var(--color-background);
+    box-shadow:
+        5px 5px 10px rgb(163, 177, 198, 0.6),
+        -5px -5px 10px rgba(255, 255, 255, 0.5);
+    border-radius: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+@utility neu-pressed {
+    background: var(--color-background);
+    box-shadow:
+        inset 6px 6px 10px rgb(163, 177, 198, 0.7),
+        inset -6px -6px 10px rgba(255, 255, 255, 0.8);
+    border-radius: 1.5rem;
+}
+
+@utility neu-convex {
+    background: linear-gradient(145deg, #f0f5fc, #c9ced4);
+    box-shadow:
+        6px 6px 12px rgb(163, 177, 198, 0.6),
+        -6px -6px 12px rgba(255, 255, 255, 0.8);
+    border-radius: 1.5rem;
+}
+
+@utility neu-icon-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: var(--color-background);
+    box-shadow:
+        6px 6px 10px rgb(163, 177, 198, 0.6),
+        -6px -6px 10px rgba(255, 255, 255, 0.8);
+    color: var(--color-text-secondary);
+    transition: all 0.3s var(--ease-neu);
+
+    &:hover {
+        color: var(--color-primary);
+        transform: translateY(-2px);
+        box-shadow:
+            9px 9px 16px rgb(163, 177, 198, 0.7),
+            -9px -9px 16px rgba(255, 255, 255, 0.9);
+    }
+
+    &:active {
+        box-shadow:
+            inset 4px 4px 8px rgb(163, 177, 198, 0.7),
+            inset -4px -4px 8px rgba(255, 255, 255, 0.9);
+        transform: translateY(0);
+    }
+}
+
+@utility neu-btn-primary {
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    color: #fff;
+    background: var(--color-primary);
+    box-shadow:
+        6px 6px 12px rgba(0, 180, 216, 0.4),
+        -6px -6px 12px rgba(255, 255, 255, 0.8);
+    transition: all 0.3s var(--ease-neu);
+    border: none;
+
+    &:hover {
+        color: #fff;
+        background: #0096c7;
+        box-shadow:
+            8px 8px 16px rgba(0, 180, 216, 0.5),
+            -8px -8px 16px rgba(255, 255, 255, 0.9);
+        transform: translateY(-2px);
+    }
+}
+
+@utility text-gradient {
+    background: linear-gradient(135deg, #00b4d8 0%, #4361ee 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+@utility text-glow {
+    text-shadow: none;
+    /* Glow doesn't work well on light backgrounds */
+}
+
+/* Scroll reveal utility */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    /* Slightly increased distance */
+    transition: all 1s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+html {
+    scroll-behavior: smooth;
+    background-color: var(--color-background);
+}
+
+body {
+    background-color: var(--color-background);
+    /* Subtle noise/texture can help neumorphism look less 'plastic', but kept clean for now */
+}
