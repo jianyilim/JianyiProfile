@@ -7,6 +7,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build:css": "npx @tailwindcss/cli -i ./src/input.css -o ./style.css --minify",
+    "watch:css": "npx @tailwindcss/cli -i ./src/input.css -o ./style.css --watch",
     "preview": "vite preview"
   },
   "keywords": [],

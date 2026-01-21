@@ -9,200 +9,221 @@
         content="Portfolio of Lim Jianyi - Experienced Software Engineering Manager and Solution Architect.">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts: Oswald + JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@500;600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap"
         rel="stylesheet">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <link rel="stylesheet" href="./style.css?v=1.0">
+    <link rel="stylesheet" href="./style.css?v=1.2">
 </head>
 
-<body
-    class="bg-background text-text-primary font-sans antialiased selection:bg-primary selection:text-black overflow-x-hidden">
+<body class="bg-background text-text-primary font-sans antialiased overflow-x-hidden">
 
-    <!-- Fixed Background Elements -->
-    <!-- Background is now handled by body color for clean neumorphism -->
-    <div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
-        <!-- Neumorphism emphasizes shape and shadow over background blobs -->
-    </div>
-
-    <header
-        class="fixed top-0 left-0 w-full z-50 bg-background/90 backdrop-blur-md border-b border-black/5 py-4 transition-all duration-300 shadow-sm">
+    <!-- Brutalist Header -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-background border-b-4 border-border py-4">
         <div class="max-w-[1200px] mx-auto px-6 md:px-8 flex justify-between items-center">
             <a href="#"
-                class="text-2xl font-bold font-display text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary tracking-tight hover:scale-105 transition-transform duration-300">Jianyi.</a>
-            <div class="hidden md:flex gap-8">
-                <a href="#about"
-                    class="text-sm uppercase tracking-wider text-text-secondary font-medium hover:text-primary transition-colors relative group">
+                class="text-2xl font-bold uppercase tracking-wider text-text-primary hover:text-primary transition-colors duration-200">
+                JIANYI<span class="text-primary">.</span>
+            </a>
+            <nav class="hidden md:flex gap-2">
+                <a href="#about" class="brutal-tag hover:bg-primary hover:text-white transition-all duration-200">
                     About
-                    <span
-                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
                 </a>
-                <a href="#experience"
-                    class="text-sm uppercase tracking-wider text-text-secondary font-medium hover:text-primary transition-colors relative group">
+                <a href="#experience" class="brutal-tag hover:bg-primary hover:text-white transition-all duration-200">
                     Experience
-                    <span
-                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
                 </a>
-                <a href="#skills"
-                    class="text-sm uppercase tracking-wider text-text-secondary font-medium hover:text-primary transition-colors relative group">
-                    Skills
-                    <span
-                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                <a href="#company" class="brutal-tag hover:bg-primary hover:text-white transition-all duration-200">
+                    My Company
                 </a>
-                <a href="#contact"
-                    class="text-sm uppercase tracking-wider text-text-secondary font-medium hover:text-primary transition-colors relative group">
+                <a href="#products" class="brutal-tag hover:bg-primary hover:text-white transition-all duration-200">
+                    Products
+                </a>
+                <a href="#contact" class="brutal-tag hover:bg-primary hover:text-white transition-all duration-200">
                     Contact
-                    <span
-                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
                 </a>
-            </div>
+            </nav>
+            <!-- Mobile menu button -->
+            <button class="md:hidden brutal-icon-btn" id="mobile-menu-btn" aria-label="Open menu" aria-expanded="false">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
         </div>
     </header>
 
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-nav" class="fixed inset-0 z-40 hidden">
+        <div class="absolute inset-0 bg-black/50" id="mobile-nav-overlay"></div>
+        <nav class="absolute right-0 top-0 h-full w-72 bg-background border-l-4 border-border p-8 flex flex-col gap-4">
+            <button class="brutal-icon-btn self-end mb-8" id="mobile-menu-close" aria-label="Close menu">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+            <a href="#about" class="brutal-btn-secondary text-center mobile-nav-link">About</a>
+            <a href="#experience" class="brutal-btn-secondary text-center mobile-nav-link">Experience</a>
+            <a href="#company" class="brutal-btn-secondary text-center mobile-nav-link">Company</a>
+            <a href="#products" class="brutal-btn-secondary text-center mobile-nav-link">Products</a>
+            <a href="#contact" class="brutal-btn-primary text-center mobile-nav-link">Contact</a>
+        </nav>
+    </div>
+
     <main>
-        <!-- Hero Section -->
-        <section class="min-h-screen flex items-center pt-20 relative">
-            <div class="max-w-[1200px] mx-auto px-6 md:px-8 w-full relative z-10">
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div class="animate-slide-up">
-                        <div
-                            class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/30 bg-primary/10 text-primary text-xs font-semibold tracking-wider uppercase mb-6 backdrop-blur-sm">
-                            <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-                            Available for new opportunities
+        <!-- Hero Section - Brutalist Asymmetric Layout -->
+        <section class="min-h-screen flex items-center pt-24 pb-16 relative overflow-hidden">
+            <!-- Decorative geometric shapes -->
+            <div class="absolute top-32 right-0 w-64 h-64 bg-primary opacity-10 border-4 border-border rotate-12 -z-10">
+            </div>
+            <div
+                class="absolute bottom-20 left-10 w-32 h-32 bg-vibrant-yellow opacity-20 border-4 border-border -rotate-6 -z-10">
+            </div>
+
+            <div class="max-w-[1200px] mx-auto px-6 md:px-8 w-full">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <!-- Left Column: Text -->
+                    <div class="reveal">
+                        <!-- Status Tag -->
+                        <div class="brutal-tag-primary inline-flex items-center gap-2 mb-8">
+                            <span class="w-2 h-2 bg-white rounded-full animate-pulse"></span>
+                            AVAILABLE FOR NEW OPPORTUNITIES
                         </div>
-                        <h1 class="text-6xl md:text-8xl font-bold font-display leading-[1] mb-6 tracking-tight">
-                            Create.<br>
-                            Lead.<br>
-                            <span class="text-gradient" id="typing-text" data-text="Innovate."></span><span
+
+                        <!-- Hero Heading -->
+                        <h1 class="brutal-heading-xl mb-8">
+                            CREATE<span class="text-primary">.</span><br>
+                            LEAD<span class="text-primary">.</span><br>
+                            <span id="typing-text" data-text="INNOVATE." class="text-gradient"></span><span
                                 class="animate-pulse text-primary">_</span>
                         </h1>
+
+                        <!-- Tagline with marker effect -->
                         <p
-                            class="text-xl text-text-secondary mb-10 max-w-lg leading-relaxed border-l-2 border-black/10 pl-6">
+                            class="brutal-body text-lg text-text-secondary mb-10 max-w-lg border-l-4 border-primary pl-6">
                             Passionate about inspiring others through effective people management and driving innovation
                             in technology.
                         </p>
+
+                        <!-- CTA Buttons -->
                         <div class="flex flex-wrap gap-4">
-                            <a href="#contact" class="neu-btn-primary group relative overflow-hidden">
-                                <span
-                                    class="relative z-10 group-hover:text-white transition-colors duration-300 flex items-center gap-2">
-                                    Let's Talk <i
-                                        class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
-                                </span>
+                            <a href="#contact" class="brutal-btn-primary group">
+                                <span>LET'S TALK</span>
+                                <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
                             </a>
-                            <a href="#experience"
-                                class="px-8 py-3 rounded-full font-semibold text-text-secondary neu-convex hover:text-primary transition-all duration-300">
-                                Explore Career
+                            <a href="#experience" class="brutal-btn-secondary">
+                                EXPLORE CAREER
                             </a>
                         </div>
                     </div>
 
-                    <!-- Hero Visual -->
-                    <div class="relative hidden md:block animate-float">
-                        <div class="relative z-10 neu-flat p-8 tilt-card transform-gpu">
-                            <div class="flex items-center justify-between mb-8 border-b border-black/10 pb-4">
+                    <!-- Right Column: Code Card -->
+                    <div class="relative hidden lg:block reveal" style="animation-delay: 200ms;">
+                        <div
+                            class="brutal-card-2xl p-0 overflow-hidden transform rotate-1 hover:rotate-0 transition-transform duration-300">
+                            <!-- Terminal Header -->
+                            <div class="flex items-center justify-between bg-border px-6 py-4">
                                 <div class="flex gap-2">
-                                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-                                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-red-500 border border-black"></div>
+                                    <div class="w-3 h-3 rounded-full bg-vibrant-yellow border border-black"></div>
+                                    <div class="w-3 h-3 rounded-full bg-vibrant-green border border-black"></div>
                                 </div>
-                                <div class="text-xs text-text-secondary font-mono">profile.cs</div>
+                                <div class="font-mono text-xs text-white uppercase tracking-widest">profile.cs</div>
                             </div>
-                            <div class="space-y-4 font-mono text-sm leading-relaxed">
+                            <!-- Code Content -->
+                            <div class="p-8 space-y-3 font-mono text-sm bg-surface">
                                 <div class="flex gap-4">
-                                    <span class="text-text-secondary w-6">1</span>
-                                    <span><span class="text-purple-400">var</span> <span
-                                            class="text-yellow-300">Jianyi</span> = <span
-                                            class="text-purple-400">new</span> {</span>
+                                    <span class="text-text-muted w-6">1</span>
+                                    <span><span class="text-secondary">var</span> <span
+                                            class="text-vibrant-yellow">Jianyi</span> = <span
+                                            class="text-secondary">new</span> {</span>
                                 </div>
                                 <div class="flex gap-4">
-                                    <span class="text-text-secondary w-6">2</span>
-                                    <span class="pl-4">Role = <span class="text-green-400">"Eng. Manager"</span>,</span>
+                                    <span class="text-text-muted w-6">2</span>
+                                    <span class="pl-6">Role = <span class="text-vibrant-green">"Eng.
+                                            Manager"</span>,</span>
                                 </div>
                                 <div class="flex gap-4">
-                                    <span class="text-text-secondary w-6">3</span>
-                                    <span class="pl-4">ExperienceInYears = <span id="years-experience"
-                                            class="text-orange-400">>12</span>,</span>
+                                    <span class="text-text-muted w-6">3</span>
+                                    <span class="pl-6">ExperienceInYears = <span id="years-experience"
+                                            class="text-vibrant-orange">>12</span>,</span>
                                 </div>
                                 <div class="flex gap-4">
-                                    <span class="text-text-secondary w-6">4</span>
-                                    <span class="pl-4">Passion = [<span class="text-green-400">"Innovation"</span>,
-                                        <span class="text-green-400">"People"</span>],</span>
+                                    <span class="text-text-muted w-6">4</span>
+                                    <span class="pl-6">Passion = [<span class="text-vibrant-green">"Innovation"</span>,
+                                        <span class="text-vibrant-green">"People"</span>],</span>
                                 </div>
                                 <div class="flex gap-4">
-                                    <span class="text-text-secondary w-6">5</span>
-                                    <span class="pl-4">Status = <span
-                                            class="text-blue-400">"AwaitingChallenge",</span></span>
+                                    <span class="text-text-muted w-6">5</span>
+                                    <span class="pl-6">Status = <span
+                                            class="text-primary">"AwaitingChallenge"</span>,</span>
                                 </div>
                                 <div class="flex gap-4">
-                                    <span class="text-text-secondary w-6">6</span>
+                                    <span class="text-text-muted w-6">6</span>
                                     <span>};</span>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Decorative elements behind card -->
+                        <!-- Decorative elements -->
+                        <div class="absolute -top-6 -right-6 w-16 h-16 bg-primary border-4 border-border -z-10"></div>
                         <div
-                            class="absolute -top-10 -right-10 w-24 h-24 bg-primary/20 rounded-full blur-xl -z-10 animate-pulse-slow">
+                            class="absolute -bottom-4 -left-4 w-12 h-12 bg-vibrant-yellow border-4 border-border rounded-full -z-10">
                         </div>
-                        <div class="absolute -bottom-5 -left-5 w-32 h-32 bg-secondary/20 rounded-full blur-xl -z-10 animate-pulse-slow"
-                            style="animation-delay: 1s;"></div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- About Section -->
-        <section id="about" class="py-32 relative">
+        <section id="about" class="py-24 relative">
+            <!-- Decorative line -->
+            <div class="brutal-divider mb-16"></div>
+
             <div class="max-w-[1200px] mx-auto px-6 md:px-8">
+                <!-- Section Header -->
                 <div class="mb-16 reveal">
-                    <span
-                        class="text-primary font-bold tracking-widest uppercase text-xs border border-primary/20 px-3 py-1 rounded-full">About
-                        Me</span>
-                    <h2 class="text-4xl md:text-5xl font-bold font-display mt-6 leading-tight">Driving Tech <br><span
-                            class="text-gradient">Innovation & Growth</span></h2>
+                    <span class="brutal-tag-primary mb-6 inline-block">ABOUT ME</span>
+                    <h2 class="brutal-heading-lg mt-4">
+                        DRIVING TECH<br>
+                        <span class="text-gradient">INNOVATION & GROWTH</span>
+                    </h2>
                 </div>
 
+                <!-- About Cards - Asymmetric Grid -->
                 <div class="grid md:grid-cols-3 gap-6">
-                    <div class="p-8 neu-flat hover:-translate-y-2 transition-transform duration-500 reveal"
-                        style="transition-delay: 100ms;">
-                        <div
-                            class="w-16 h-16 neu-pressed rounded-full flex items-center justify-center text-primary mb-6">
-                            <i class="fas fa-users-cog text-xl"></i>
+                    <!-- Card 1: Leadership -->
+                    <div class="brutal-card-2xl p-8 reveal stagger-item" style="animation-delay: 100ms;">
+                        <div class="brutal-card-inset w-16 h-16 flex items-center justify-center mb-6 rotate-3">
+                            <i class="fas fa-users-cog text-2xl text-primary"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-4 font-display">Leadership</h3>
-                        <p class="text-text-secondary leading-relaxed">
+                        <h3 class="brutal-heading-md mb-4">LEADERSHIP</h3>
+                        <p class="brutal-body text-text-secondary">
                             Actively involved in strategic planning, performance improvement, and decision-making.
                             Skilled in mentoring teams for technical enhancement and career growth.
                         </p>
                     </div>
 
-                    <div class="p-8 neu-flat hover:-translate-y-2 transition-transform duration-500 reveal"
-                        style="transition-delay: 200ms;">
-                        <div
-                            class="w-16 h-16 neu-pressed rounded-full flex items-center justify-center text-secondary mb-6">
-                            <i class="fas fa-layer-group text-xl"></i>
+                    <!-- Card 2: Architecture - Offset -->
+                    <div class="brutal-card-2xl p-8 md:-translate-y-4 reveal stagger-item"
+                        style="animation-delay: 200ms;">
+                        <div class="brutal-card-inset w-16 h-16 flex items-center justify-center mb-6 -rotate-2">
+                            <i class="fas fa-layer-group text-2xl text-secondary"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-4 font-display">Architecture</h3>
-                        <p class="text-text-secondary leading-relaxed">
+                        <h3 class="brutal-heading-md mb-4">ARCHITECTURE</h3>
+                        <p class="brutal-body text-text-secondary">
                             Experienced systems architect skilled in end-to-end design across various domains.
                             Proficient in both Scrum and Waterfall methodologies.
                         </p>
                     </div>
 
-                    <div class="p-8 neu-flat hover:-translate-y-2 transition-transform duration-500 reveal"
-                        style="transition-delay: 300ms;">
-                        <div
-                            class="w-16 h-16 neu-pressed rounded-full flex items-center justify-center text-purple-400 mb-6">
-                            <i class="fas fa-terminal text-xl"></i>
+                    <!-- Card 3: DevOps -->
+                    <div class="brutal-card-2xl p-8 reveal stagger-item" style="animation-delay: 300ms;">
+                        <div class="brutal-card-inset w-16 h-16 flex items-center justify-center mb-6 rotate-1">
+                            <i class="fas fa-terminal text-2xl text-vibrant-pink"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-4 font-display">DevOps</h3>
-                        <p class="text-text-secondary leading-relaxed">
+                        <h3 class="brutal-heading-md mb-4">DEVOPS</h3>
+                        <p class="brutal-body text-text-secondary">
                             Designed and implemented fully automated CI/CD pipelines. Managed efficient software
                             deployment and high-quality delivery protocols.
                         </p>
@@ -212,186 +233,282 @@
         </section>
 
         <!-- Experience Section -->
-        <section id="experience" class="py-32 relative overflow-hidden">
-            <!-- Background Line -->
-            <div
-                class="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-primary/20 to-transparent hidden md:block">
-            </div>
-
-            <div class="max-w-[1200px] mx-auto px-6 md:px-8 relative z-10">
-                <div class="text-center mb-24 reveal">
-                    <span
-                        class="text-primary font-bold tracking-widest uppercase text-xs border border-primary/20 px-3 py-1 rounded-full">Career
-                        Path</span>
-                    <h2 class="text-4xl md:text-5xl font-bold font-display mt-6">Professional Experience</h2>
+        <section id="experience" class="py-24 relative overflow-hidden bg-surface-alt">
+            <div class="max-w-[1200px] mx-auto px-6 md:px-8">
+                <!-- Section Header -->
+                <div class="text-center mb-20 reveal">
+                    <span class="brutal-tag-primary mb-6 inline-block">CAREER PATH</span>
+                    <h2 class="brutal-heading-lg">PROFESSIONAL<br>EXPERIENCE</h2>
                 </div>
 
-                <div class="space-y-24">
+                <!-- Timeline -->
+                <div class="space-y-12">
                     <!-- Appspace -->
-                    <div class="group relative grid md:grid-cols-2 gap-12 items-start reveal">
-                        <div class="md:text-right order-2 md:order-1 sticky top-32 self-start">
-                            <span class="inline-block text-primary font-display font-semibold mb-2">April 2022 –
-                                Present</span>
-                            <h3 class="text-3xl font-bold mb-1">Senior Software Engineering Manager</h3>
-                            <div class="text-xl text-text-secondary mb-4">Appspace (M) Sdn Bhd</div>
-                            <p class="text-text-secondary italic mb-4">Workplace experience platform (Digital Signage,
-                                Space Reservation, Intranet).</p>
-                            <div class="flex flex-wrap gap-2 md:justify-end">
-                                <span
-                                    class="px-3 py-1 rounded-full bg-white/5 text-xs text-text-secondary border border-white/5">.NET
-                                    8</span>
-                                <span
-                                    class="px-3 py-1 rounded-full bg-white/5 text-xs text-text-secondary border border-white/5">GCP</span>
-                                <span
-                                    class="px-3 py-1 rounded-full bg-white/5 text-xs text-text-secondary border border-white/5">K8s</span>
-                                <span
-                                    class="px-3 py-1 rounded-full bg-white/5 text-xs text-text-secondary border border-white/5">MongoDB</span>
+                    <div class="grid lg:grid-cols-12 gap-8 items-start reveal">
+                        <!-- Left: Date & Title -->
+                        <div class="lg:col-span-4 lg:text-right">
+                            <span class="brutal-tag-primary mb-4 inline-block">APRIL 2022 – PRESENT</span>
+                            <h3 class="brutal-heading-md mb-2">SENIOR SOFTWARE<br>ENGINEERING MANAGER</h3>
+                            <p class="brutal-subheading text-text-secondary">Appspace (M) Sdn Bhd</p>
+                            <p class="brutal-body text-text-muted italic mt-2">Workplace experience platform<br>(Digital
+                                Signage, Space Reservation, Intranet)</p>
+                            <!-- Tech Tags -->
+                            <div class="flex flex-wrap gap-2 mt-4 lg:justify-end">
+                                <span class="brutal-tag text-xs">.NET 8</span>
+                                <span class="brutal-tag text-xs">GCP</span>
+                                <span class="brutal-tag text-xs">K8s</span>
+                                <span class="brutal-tag text-xs">MongoDB</span>
                             </div>
                         </div>
 
-                        <div
-                            class="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-primary shadow-[0_0_20px_rgba(0,242,255,0.5)] z-20 hidden md:block group-hover:scale-150 transition-transform duration-300 top-2">
-                            <div class="absolute inset-0 rounded-full bg-primary animate-ping opacity-75"></div>
+                        <!-- Timeline dot -->
+                        <div class="hidden lg:flex flex-col items-center">
+                            <div class="w-6 h-6 bg-primary border-4 border-border"></div>
+                            <div class="w-1 flex-1 bg-border"></div>
                         </div>
 
-                        <div class="order-1 md:order-2">
-                            <div class="neu-flat p-8 tilt-card hover:border-primary/30 transition-colors">
-                                <ul class="space-y-4 text-gray-700 text-sm list-none">
-                                    <li class="flex gap-3"><i class="fas fa-check text-primary mt-1 shrink-0"></i>
-                                        <span>Align and communicate with stakeholders about software development
-                                            strategies and delivery.</span>
-                                    </li>
-                                    <li class="flex gap-3"><i class="fas fa-check text-primary mt-1 shrink-0"></i>
-                                        <span>Lead a diverse team of over 11 members, including developers, team leads,
+                        <!-- Right: Details -->
+                        <div class="lg:col-span-7">
+                            <div class="brutal-card p-8">
+                                <p class="brutal-body text-text-secondary mb-6 italic">
+                                    Driving high-level technical strategy and operational excellence. Click each point
+                                    to see details.
+                                </p>
+
+                                <!-- Expandable Bullets -->
+                                <div class="space-y-2">
+                                    <!-- 1 -->
+                                    <details class="brutal-exp-bullet">
+                                        <summary class="brutal-exp-summary">Stakeholder Alignment & Strategy</summary>
+                                        <div class="brutal-exp-content">
+                                            Align and communicate with stakeholders about software development
+                                            strategies and delivery.
+                                        </div>
+                                    </details>
+
+                                    <!-- 2 -->
+                                    <details class="brutal-exp-bullet">
+                                        <summary class="brutal-exp-summary">Team Leadership (11+ members)</summary>
+                                        <div class="brutal-exp-content">
+                                            Lead a diverse team of over 11 members, including developers, team leads,
                                             and managers. Responsible for project and resource planning, project
-                                            tracking, and risk management.</span>
-                                    </li>
-                                    <li class="flex gap-3"><i class="fas fa-check text-primary mt-1 shrink-0"></i>
-                                        <span>Built the escalation team starting from 0 to 1 Tech Lead, 5 Senior
-                                            Developers, and 2 Junior Developers, leading full hiring, onboarding, and
-                                            mentoring cycles.</span>
-                                    </li>
-                                    <li class="flex gap-3"><i class="fas fa-check text-primary mt-1 shrink-0"></i>
-                                        <span>Increased issue resolution efficiency, handling 80% of all production
-                                            escalation tickets, significantly reducing load on feature teams.</span>
-                                    </li>
-                                    <li class="flex gap-3"><i class="fas fa-check text-primary mt-1 shrink-0"></i>
-                                        <span>Primary technical contact during high-impact production incidents for
-                                            customers like Deloitte, Disney, and DPDHL.</span>
-                                    </li>
-                                    <li class="flex gap-3"><i class="fas fa-check text-primary mt-1 shrink-0"></i>
-                                        <span>Led proactive monitoring and performance tuning in GCP/Kubernetes and
-                                            legacy .NET frameworks. Resolved critical memory leaks (120GB crash) and
-                                            deadlocks.</span>
-                                    </li>
-                                    <li class="flex gap-3"><i class="fas fa-check text-primary mt-1 shrink-0"></i>
-                                        <span>Established a global 24/7 on-call support system and implemented PagerDuty
-                                            for automated alerting.</span>
-                                    </li>
-                                    <li class="flex gap-3"><i class="fas fa-check text-primary mt-1 shrink-0"></i>
-                                        <span>Led a cross-functional team in developing space reservation features using
-                                            .NET 8, Node.js, MongoDB, RabbitMQ, and Redis.</span>
-                                    </li>
-                                    <li class="flex gap-3"><i class="fas fa-check text-primary mt-1 shrink-0"></i>
-                                        <span>Led the migration of a legacy Windows-based file system to Google Cloud
-                                            Object Storage.</span>
-                                    </li>
-                                </ul>
+                                            tracking and risk management.
+                                        </div>
+                                    </details>
+
+                                    <!-- 3 -->
+                                    <details class="brutal-exp-bullet">
+                                        <summary class="brutal-exp-summary">Escalation Team Building & Mentorship
+                                        </summary>
+                                        <div class="brutal-exp-content">
+                                            Built the escalation team starting from 0 to 1 Tech Lead, 5 Senior
+                                            Developers (including 2 outsource developers in Latin America), and 2 Junior
+                                            Developers, leading the full hiring cycle including interviews, onboarding,
+                                            mentoring, and career development as well as performance review. Mentored
+                                            and groomed engineers to become cross-functional contributors capable of
+                                            resolving complex production issues across multiple business domains.
+                                        </div>
+                                    </details>
+
+                                    <!-- 4 -->
+                                    <details class="brutal-exp-bullet">
+                                        <summary class="brutal-exp-summary">Issue Resolution Efficiency (80% resolution)
+                                        </summary>
+                                        <div class="brutal-exp-content">
+                                            Increased issue resolution efficiency, with the new Escalation Team now
+                                            handling 80% of all production escalation tickets, significantly reducing
+                                            load on feature teams and transitioning production support responsibilities
+                                            away from feature teams to improve focus and efficiency.
+                                        </div>
+                                    </details>
+
+                                    <!-- 5 -->
+                                    <details class="brutal-exp-bullet">
+                                        <summary class="brutal-exp-summary">High-Impact Incident Management</summary>
+                                        <div class="brutal-exp-content">
+                                            Primary technical contact during high-impact production incidents, taking
+                                            ownership of critical issues and leading technical resolution efforts. For
+                                            example, faced directly with enterprise customers such as Deloitte, Disney,
+                                            and DPDHL, ensuring clear, timely communication and maintaining customer
+                                            confidence under pressure. Coordinated cross-functional teams to diagnose
+                                            root causes, implement fixes, and drive post-incident reviews, significantly
+                                            improving incident response effectiveness.
+                                        </div>
+                                    </details>
+
+                                    <!-- 6 -->
+                                    <details class="brutal-exp-bullet">
+                                        <summary class="brutal-exp-summary">Proactive Monitoring & Performance Tuning
+                                        </summary>
+                                        <div class="brutal-exp-content">
+                                            Led the Escalation Team in proactive monitoring and performance tuning of
+                                            both modern microservices in Google Cloud Platform using Kubernetes and
+                                            legacy .NET Framework applications hosted in Windows instances. Resolved
+                                            critical performance and memory issues, including a long-standing memory
+                                            leak that caused a service to consume up to 120GB before crashing, and a
+                                            legacy system deadlock that led to thread starvation and leaks. In addition,
+                                            we also worked on improving MongoDB performance by implementing optimal
+                                            indexing strategies and rewriting inefficient queries.
+                                        </div>
+                                    </details>
+
+                                    <!-- 7 -->
+                                    <details class="brutal-exp-bullet">
+                                        <summary class="brutal-exp-summary">Global 24/7 Support & PagerDuty</summary>
+                                        <div class="brutal-exp-content">
+                                            Established a global 24/7 on-call support system to meet the growing needs
+                                            of customers across multiple time zones and regions. Designed and
+                                            implemented on-call rotations, shift schedules, and holiday coverage,
+                                            ensuring continuous support coverage from engineering teams in LATAM and
+                                            Malaysia. Standardized incident response procedures and cross-team
+                                            communication protocols to improve coordination and reduce time to
+                                            resolution during critical production issues. Implemented PagerDuty for
+                                            automated alerting, escalation workflows, and visibility across time zones,
+                                            enabling fast, reliable response during outages and high-impact incidents.
+                                        </div>
+                                    </details>
+
+                                    <!-- 8 -->
+                                    <details class="brutal-exp-bullet">
+                                        <summary class="brutal-exp-summary">Feature Development: Space Reservation
+                                        </summary>
+                                        <div class="brutal-exp-content">
+                                            Led a cross-functional team in developing space reservation features,
+                                            including constraint rules and multi-resource event booking with Outlook and
+                                            Google Calendar integrations. Delivered key product capabilities such as
+                                            rules-based reservation logic and calendar sync, supporting complex
+                                            enterprise use cases. Worked across a modern tech stack: .NET 8, Node.js,
+                                            MongoDB, RabbitMQ for messaging, and Redis for distributed caching. Ensured
+                                            high system scalability and responsiveness by leveraging asynchronous
+                                            communication and optimized data access patterns.
+                                        </div>
+                                    </details>
+
+                                    <!-- 9 -->
+                                    <details class="brutal-exp-bullet">
+                                        <summary class="brutal-exp-summary">Cloud Migration (Windows to GCP)</summary>
+                                        <div class="brutal-exp-content">
+                                            Led the migration of a legacy Windows-based file system to Google Cloud
+                                            Object Storage, aiming to eliminate dependency on Windows licenses, reduce
+                                            costs, and enhance system stability. Strategized and executed a different
+                                            phases migration plan, ensuring minimal downtime and seamless transition of
+                                            large volumes of data to a cloud-native, scalable solution. Implemented
+                                            proactive monitoring and regression detection to catch and resolve issues
+                                            early during migration and post-deployment.
+                                        </div>
+                                    </details>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Nettium -->
-                    <div class="group relative grid md:grid-cols-2 gap-12 items-start reveal">
-                        <div class="order-2 md:order-2 sticky top-32 self-start">
-                            <span class="inline-block text-secondary font-display font-semibold mb-2">Jun 2020 –
-                                2022</span>
-                            <h3 class="text-3xl font-bold mb-1">Team Lead</h3>
-                            <div class="text-xl text-text-secondary mb-4">Nettium Sdn Bhd</div>
-                            <div class="flex flex-wrap gap-2">
-                                <span
-                                    class="px-3 py-1 rounded-full bg-white/5 text-xs text-text-secondary border border-white/5">DDD</span>
-                                <span
-                                    class="px-3 py-1 rounded-full bg-white/5 text-xs text-text-secondary border border-white/5">RabbitMQ</span>
-                                <span
-                                    class="px-3 py-1 rounded-full bg-white/5 text-xs text-text-secondary border border-white/5">Blazor</span>
-                                <span
-                                    class="px-3 py-1 rounded-full bg-white/5 text-xs text-text-secondary border border-white/5">Alibaba
-                                    Cloud</span>
-                            </div>
-                        </div>
-
-                        <div
-                            class="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-secondary shadow-[0_0_20px_rgba(67,97,238,0.5)] z-20 hidden md:block group-hover:scale-150 transition-transform duration-300 top-2">
-                        </div>
-
-                        <div class="order-1 md:order-1">
-                            <div class="neu-flat p-8 tilt-card hover:border-secondary/30 transition-colors">
-                                <ul class="space-y-4 text-gray-700 text-sm list-none">
-                                    <li class="flex gap-3"><i class="fas fa-check text-secondary mt-1 shrink-0"></i>
+                    <div class="grid lg:grid-cols-12 gap-8 items-start reveal">
+                        <!-- Left: Details (reversed) -->
+                        <div class="lg:col-span-7 order-2 lg:order-1">
+                            <div class="brutal-card p-8">
+                                <ul class="space-y-4 text-text-secondary brutal-body">
+                                    <li class="flex gap-3">
+                                        <i class="fas fa-check text-secondary mt-1 shrink-0"></i>
                                         <span>Led a team of 12 developers modernizing a legacy .NET Framework system to
                                             .NET Core using DDD.</span>
                                     </li>
-                                    <li class="flex gap-3"><i class="fas fa-check text-secondary mt-1 shrink-0"></i>
+                                    <li class="flex gap-3">
+                                        <i class="fas fa-check text-secondary mt-1 shrink-0"></i>
                                         <span>Improved system performance via async programming, optimized queries, and
                                             distributed tracing.</span>
                                     </li>
-                                    <li class="flex gap-3"><i class="fas fa-check text-secondary mt-1 shrink-0"></i>
+                                    <li class="flex gap-3">
+                                        <i class="fas fa-check text-secondary mt-1 shrink-0"></i>
                                         <span>Planned and contributed to the full software lifecycle, including
                                             architectural design and deployment to Alibaba Cloud (Kubernetes).</span>
                                     </li>
-                                    <li class="flex gap-3"><i class="fas fa-check text-secondary mt-1 shrink-0"></i>
+                                    <li class="flex gap-3">
+                                        <i class="fas fa-check text-secondary mt-1 shrink-0"></i>
                                         <span>Led a team of 3 developers to build a Communication Microservice & Admin
                                             Portal using Blazor.</span>
                                     </li>
-                                    <li class="flex gap-3"><i class="fas fa-check text-secondary mt-1 shrink-0"></i>
+                                    <li class="flex gap-3">
+                                        <i class="fas fa-check text-secondary mt-1 shrink-0"></i>
                                         <span>Utilized RabbitMQ, Entity Framework with MySQL, and OData protocol.</span>
                                     </li>
-                                    <li class="flex gap-3"><i class="fas fa-check text-secondary mt-1 shrink-0"></i>
-                                        <span>Oversaw team growth, hiring, and performance management for in-house and
-                                            outsourced developers.</span>
+                                    <li class="flex gap-3">
+                                        <i class="fas fa-check text-secondary mt-1 shrink-0"></i>
+                                        <span>Oversaw team growth, hiring, and performance management.</span>
                                     </li>
                                 </ul>
+                            </div>
+                        </div>
+
+                        <!-- Timeline dot -->
+                        <div class="hidden lg:flex flex-col items-center order-2">
+                            <div class="w-6 h-6 bg-secondary border-4 border-border"></div>
+                            <div class="w-1 flex-1 bg-border"></div>
+                        </div>
+
+                        <!-- Right: Date & Title -->
+                        <div class="lg:col-span-4 order-1 lg:order-3">
+                            <span class="brutal-tag inline-block mb-4 border-secondary">JUN 2020 – 2022</span>
+                            <h3 class="brutal-heading-md mb-2">TEAM LEAD</h3>
+                            <p class="brutal-subheading text-text-secondary">Nettium Sdn Bhd</p>
+                            <!-- Tech Tags -->
+                            <div class="flex flex-wrap gap-2 mt-4">
+                                <span class="brutal-tag text-xs">DDD</span>
+                                <span class="brutal-tag text-xs">RabbitMQ</span>
+                                <span class="brutal-tag text-xs">Blazor</span>
+                                <span class="brutal-tag text-xs">Alibaba Cloud</span>
                             </div>
                         </div>
                     </div>
 
                     <!-- Dassault Systèmes -->
-                    <div class="group relative grid md:grid-cols-2 gap-12 items-start reveal">
-                        <div class="md:text-right order-2 md:order-1 sticky top-32 self-start">
-                            <span class="inline-block text-text-secondary font-display font-semibold mb-2">April 2016 –
-                                2020</span>
-                            <h3 class="text-3xl font-bold mb-1">Technical Lead / Principal Consultant</h3>
-                            <div class="text-xl text-text-secondary">Dassault Systèmes</div>
+                    <div class="grid lg:grid-cols-12 gap-8 items-start reveal">
+                        <!-- Left: Date & Title -->
+                        <div class="lg:col-span-4 lg:text-right">
+                            <span class="brutal-tag inline-block mb-4">APRIL 2016 – 2020</span>
+                            <h3 class="brutal-heading-md mb-2">TECHNICAL LEAD /<br>PRINCIPAL CONSULTANT</h3>
+                            <p class="brutal-subheading text-text-secondary">Dassault Systèmes</p>
                         </div>
-                        <div
-                            class="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-white/50 z-20 hidden md:block group-hover:scale-150 transition-transform duration-300 top-2">
+
+                        <!-- Timeline dot -->
+                        <div class="hidden lg:flex flex-col items-center">
+                            <div class="w-6 h-6 bg-vibrant-indigo border-4 border-border"></div>
+                            <div class="w-1 flex-1 bg-border"></div>
                         </div>
-                        <div class="order-1 md:order-2">
-                            <div class="neu-flat p-8 tilt-card hover:border-white/30 transition-colors">
-                                <ul class="space-y-4 text-gray-700 text-sm list-none">
-                                    <li class="flex gap-3"><i class="fas fa-check text-indigo-500 mt-1 shrink-0"></i>
+
+                        <!-- Right: Details -->
+                        <div class="lg:col-span-7">
+                            <div class="brutal-card p-8">
+                                <p class="brutal-body text-text-secondary mb-4">
+                                    Provided high-level technical consulting and architecture for global supply chain
+                                    and railway solutions.
+                                </p>
+
+                                <ul class="space-y-4 text-text-secondary brutal-body">
+                                    <li class="flex gap-3">
+                                        <i class="fas fa-check text-vibrant-indigo mt-1 shrink-0"></i>
                                         <span>Supervise deployments, provide troubleshooting, and conduct research on
                                             system design.</span>
                                     </li>
-                                    <li class="flex gap-3"><i class="fas fa-check text-indigo-500 mt-1 shrink-0"></i>
+                                    <li class="flex gap-3">
+                                        <i class="fas fa-check text-vibrant-indigo mt-1 shrink-0"></i>
                                         <span>Work closely with product teams to define and prioritize partner feature
                                             requests.</span>
                                     </li>
-                                    <li class="flex gap-3"><i class="fas fa-check text-indigo-500 mt-1 shrink-0"></i>
-                                        <span>Install, integrate, and deploy products in client environments. lead
+                                    <li class="flex gap-3">
+                                        <i class="fas fa-check text-vibrant-indigo mt-1 shrink-0"></i>
+                                        <span>Install, integrate, and deploy products in client environments. Lead
                                             detailed architectural dialogues.</span>
                                     </li>
-                                    <li class="flex gap-3"><i class="fas fa-check text-indigo-500 mt-1 shrink-0"></i>
-                                        <span>Lead contributor on Delmia Quintiq’s largest project—a railway timetable
+                                    <li class="flex gap-3">
+                                        <i class="fas fa-check text-vibrant-indigo mt-1 shrink-0"></i>
+                                        <span>Lead contributor on Delmia Quintiq's largest project—a railway timetable
                                             solution for Italy.</span>
                                     </li>
-                                    <li class="flex gap-3"><i class="fas fa-check text-indigo-500 mt-1 shrink-0"></i>
-                                        <span>Managed project scope, schedule, status, and documentation.</span>
-                                    </li>
-                                    <li class="flex gap-3"><i class="fas fa-check text-indigo-500 mt-1 shrink-0"></i>
-                                        <span>Worked on international projects across Asia-Pacific, Europe, and America
-                                            (logistic, railway, workforce planning).</span>
+                                    <li class="flex gap-3">
+                                        <i class="fas fa-check text-vibrant-indigo mt-1 shrink-0"></i>
+                                        <span>Worked on international projects across Asia-Pacific, Europe, and
+                                            America.</span>
                                     </li>
                                 </ul>
                             </div>
@@ -399,194 +516,320 @@
                     </div>
 
                     <!-- OpenSys -->
-                    <div class="group relative grid md:grid-cols-2 gap-12 items-start reveal">
-                        <div class="order-2 md:order-2 sticky top-32 self-start">
-                            <span class="inline-block text-text-secondary font-display font-semibold mb-2">April 2013 –
-                                April 2016</span>
-                            <h3 class="text-3xl font-bold mb-1">Senior Systems Engineer</h3>
-                            <div class="text-xl text-text-secondary">OpenSys (M) Berhad</div>
-                        </div>
-                        <div
-                            class="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-white/30 z-20 hidden md:block group-hover:scale-150 transition-transform duration-300 top-2">
-                        </div>
-                        <div class="order-1 md:order-1">
-                            <div class="neu-flat p-8 tilt-card hover:border-white/30 transition-colors">
-                                <ul class="space-y-4 text-gray-700 text-sm list-none">
-                                    <li class="flex gap-3"><i class="fas fa-check text-emerald-500 mt-1 shrink-0"></i>
+                    <div class="grid lg:grid-cols-12 gap-8 items-start reveal">
+                        <!-- Left: Details (reversed) -->
+                        <div class="lg:col-span-7 order-2 lg:order-1">
+                            <div class="brutal-card p-8">
+                                <p class="brutal-body text-text-secondary mb-4">
+                                    Developed scalable financial software products and led technical teams for major
+                                    local banking institutions.
+                                </p>
+
+                                <ul class="space-y-4 text-text-secondary brutal-body">
+                                    <li class="flex gap-3">
+                                        <i class="fas fa-check text-vibrant-green mt-1 shrink-0"></i>
                                         <span>Build, test and deploy scalable, highly available and modular software
                                             products.</span>
                                     </li>
-                                    <li class="flex gap-3"><i class="fas fa-check text-emerald-500 mt-1 shrink-0"></i>
+                                    <li class="flex gap-3">
+                                        <i class="fas fa-check text-vibrant-green mt-1 shrink-0"></i>
                                         <span>Lead a small group of around 3 people. Trained and managed a team of
                                             developers.</span>
                                     </li>
-                                    <li class="flex gap-3"><i class="fas fa-check text-emerald-500 mt-1 shrink-0"></i>
+                                    <li class="flex gap-3">
+                                        <i class="fas fa-check text-vibrant-green mt-1 shrink-0"></i>
                                         <span>Worked closely with clients to establish problem specifications and system
                                             designs.</span>
                                     </li>
-                                    <li class="flex gap-3"><i class="fas fa-check text-emerald-500 mt-1 shrink-0"></i>
+                                    <li class="flex gap-3">
+                                        <i class="fas fa-check text-vibrant-green mt-1 shrink-0"></i>
                                         <span>Led multiple projects with local banks (CIMB, Hong Leong Bank, Maybank,
                                             AEON Credit).</span>
                                     </li>
-                                    <li class="flex gap-3"><i class="fas fa-check text-emerald-500 mt-1 shrink-0"></i>
-                                        <span>Acted as the primary technical lead for cash recycling machines and teller
-                                            machine projects.</span>
+                                    <li class="flex gap-3">
+                                        <i class="fas fa-check text-vibrant-green mt-1 shrink-0"></i>
+                                        <span>Primary technical lead for cash recycling machines and teller machine
+                                            projects.</span>
                                     </li>
                                 </ul>
                             </div>
                         </div>
+
+                        <!-- Timeline dot -->
+                        <div class="hidden lg:flex flex-col items-center order-2">
+                            <div class="w-6 h-6 bg-vibrant-green border-4 border-border"></div>
+                        </div>
+
+                        <!-- Right: Date & Title -->
+                        <div class="lg:col-span-4 order-1 lg:order-3">
+                            <span class="brutal-tag inline-block mb-4">APRIL 2013 – APRIL 2016</span>
+                            <h3 class="brutal-heading-md mb-2">SENIOR SYSTEMS<br>ENGINEER</h3>
+                            <p class="brutal-subheading text-text-secondary">OpenSys (M) Berhad</p>
+                        </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- My Company Section -->
+        <section id="company" class="py-24 relative">
+            <div class="brutal-divider mb-16"></div>
+
+            <div class="max-w-[1200px] mx-auto px-6 md:px-8">
+                <!-- Section Header -->
+                <div class="text-center mb-16 reveal">
+                    <span class="brutal-tag-primary mb-6 inline-block">FOUNDER & LEAD</span>
+                    <h2 class="brutal-heading-lg">MY COMPANY<br><span class="text-gradient">AFFRA TECHNOLOGIES</span>
+                    </h2>
+
+                    <!-- CTA -->
+                    <div class="text-center reveal mt-4">
+                        <a href="https://affra.com.my" target="_blank" class="brutal-btn-secondary group">
+                            <span>VISIT AFFRA</span>
+                            <i
+                                class="fas fa-external-link-alt group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+
+
+
+                <!-- Company Intro Card -->
+                <div class="brutal-card-2xl p-8 md:p-12 mb-12 reveal">
+                    <p class="brutal-body text-text-secondary text-lg mb-6">
+                        Premium intelligent systems for modern enterprises. We specialize in Custom Software, AI & Data
+                        Science, and Cloud-Native Platforms.
+                    </p>
+
+                    <!-- Key Values -->
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
+                        <div class="brutal-card-inset p-4 flex items-center gap-3">
+                            <i class="fas fa-eye text-primary text-xl"></i>
+                            <span class="brutal-label">Transparent Logic</span>
+                        </div>
+                        <div class="brutal-card-inset p-4 flex items-center gap-3">
+                            <i class="fas fa-chart-line text-vibrant-green text-xl"></i>
+                            <span class="brutal-label">Data Driven</span>
+                        </div>
+                        <div class="brutal-card-inset p-4 flex items-center gap-3">
+                            <i class="fas fa-shield-alt text-secondary text-xl"></i>
+                            <span class="brutal-label">Secure by Default</span>
+                        </div>
+                        <div class="brutal-card-inset p-4 flex items-center gap-3">
+                            <i class="fas fa-crosshairs text-vibrant-orange text-xl"></i>
+                            <span class="brutal-label">Precision Crafted</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Customer Highlight -->
+                <div class="brutal-card p-8 mb-8 reveal">
+                    <div class="flex flex-col md:flex-row items-center gap-6">
+                        <div class="brutal-card-inset w-16 h-16 flex items-center justify-center shrink-0">
+                            <i class="fas fa-building text-2xl text-primary"></i>
+                        </div>
+                        <div class="text-center md:text-left">
+                            <p class="brutal-label text-text-muted mb-1">CUSTOMERS</p>
+                            <p class="brutal-heading-md">Eneos Explora Inc. <span class="text-text-muted">&</span> TNB
+                                Research</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products & Tools Section -->
+        <section id="products" class="py-24 relative bg-surface-alt">
+            <div class="max-w-[1200px] mx-auto px-6 md:px-8">
+                <!-- Section Header -->
+                <div class="text-center mb-16 reveal">
+                    <span class="brutal-tag-primary mb-6 inline-block">BUILT BY ME</span>
+                    <h2 class="brutal-heading-lg">PRODUCTS<br><span class="text-gradient">& TOOLS</span></h2>
+                </div>
+
+                <!-- Product Cards Grid -->
+                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <!-- Vellum -->
+                    <a href="https://vellum.affra.com.my" target="_blank" class="brutal-card p-8 group block reveal">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="brutal-card-inset w-12 h-12 flex items-center justify-center">
+                                <i class="fas fa-graduation-cap text-xl text-primary"></i>
+                            </div>
+                            <span class="brutal-tag text-xs">PRODUCT</span>
+                        </div>
+                        <h3 class="brutal-heading-md mb-3 group-hover:text-primary transition-colors">Vellum</h3>
+                        <p class="brutal-body text-text-secondary">
+                            Academic e-learning platform for online tuition and course management.
+                        </p>
+                        <div class="mt-4 flex items-center gap-2 text-primary font-semibold">
+                            <span>Learn More</span>
+                            <i class="fas fa-arrow-right transform group-hover:translate-x-2 transition-transform"></i>
+                        </div>
+                    </a>
+
+                    <!-- Serum -->
+                    <a href="https://serum.affra.com.my" target="_blank" class="brutal-card p-8 group reveal">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="brutal-card-inset w-12 h-12 flex items-center justify-center">
+                                <i class="fas fa-magic text-xl text-secondary"></i>
+                            </div>
+                            <span class="brutal-tag text-xs border-secondary">TOOL</span>
+                        </div>
+                        <h3 class="brutal-heading-md mb-3 group-hover:text-secondary transition-colors">Serum</h3>
+                        <p class="brutal-body text-text-secondary">
+                            AI UI Prompt Generator for typography, layout, and animation configuration.
+                        </p>
+                        <div class="mt-4 flex items-center gap-2 text-secondary font-semibold">
+                            <span>Learn More</span>
+                            <i class="fas fa-arrow-right transform group-hover:translate-x-2 transition-transform"></i>
+                        </div>
+                    </a>
                 </div>
             </div>
         </section>
 
         <!-- Skills Section -->
-        <section id="skills" class="py-32 relative">
+        <section id="skills" class="py-24 relative">
+            <div class="brutal-divider mb-16"></div>
+
             <div class="max-w-[1200px] mx-auto px-6 md:px-8">
-                <div class="mb-16 text-center reveal">
-                    <span
-                        class="text-primary font-bold tracking-widest uppercase text-xs border border-primary/20 px-3 py-1 rounded-full">Expertise</span>
-                    <h2 class="text-4xl md:text-5xl font-bold font-display mt-6">Technical Arsenal</h2>
+                <!-- Section Header -->
+                <div class="text-center mb-16 reveal">
+                    <span class="brutal-tag-primary mb-6 inline-block">EXPERTISE</span>
+                    <h2 class="brutal-heading-lg">TECHNICAL<br>ARSENAL</h2>
                 </div>
 
+                <!-- Skills Grid - Bento Style -->
                 <div class="flex flex-wrap justify-center gap-4 reveal">
-                    <!-- Standardized Skill Tags with Neumorphism -->
-                    <div
-                        class="group relative px-6 py-3 rounded-xl neu-convex hover:neu-flat transition-all duration-300 cursor-default hover:-translate-y-1">
-                        <div
-                            class="absolute inset-0 bg-primary/20 blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl">
-                        </div>
-                        <div class="relative flex items-center gap-3">
-                            <i class="fas fa-code text-primary text-xl"></i>
-                            <span class="font-semibold text-lg">C# / .net</span>
-                        </div>
+                    <!-- Skill Tags with staggered animation -->
+                    <div class="brutal-card p-6 flex items-center gap-4 stagger-item hover:bg-primary hover:text-white transition-colors duration-200 cursor-default"
+                        style="animation-delay: 0ms;">
+                        <i class="fas fa-code text-2xl text-primary group-hover:text-white"></i>
+                        <span class="brutal-label text-lg">C# / .NET</span>
                     </div>
 
-                    <div
-                        class="group relative px-6 py-3 rounded-xl neu-convex hover:neu-flat transition-all duration-300 cursor-default hover:-translate-y-1">
-                        <div
-                            class="absolute inset-0 bg-secondary/20 blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl">
-                        </div>
-                        <div class="relative flex items-center gap-3">
-                            <i class="fab fa-java text-secondary text-xl"></i>
-                            <span class="font-semibold text-lg">Java</span>
-                        </div>
+                    <div class="brutal-card p-6 flex items-center gap-4 stagger-item hover:bg-secondary hover:text-white transition-colors duration-200 cursor-default"
+                        style="animation-delay: 100ms;">
+                        <i class="fab fa-java text-2xl text-secondary"></i>
+                        <span class="brutal-label text-lg">JAVA</span>
                     </div>
 
-                    <div
-                        class="group relative px-6 py-3 rounded-xl neu-convex hover:neu-flat transition-all duration-300 cursor-default hover:-translate-y-1">
-                        <div
-                            class="absolute inset-0 bg-yellow-400/20 blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl">
-                        </div>
-                        <div class="relative flex items-center gap-3">
-                            <i class="fab fa-js text-yellow-400 text-xl"></i>
-                            <span class="font-semibold text-lg">Node.js</span>
-                        </div>
+                    <div class="brutal-card p-6 flex items-center gap-4 stagger-item hover:bg-vibrant-yellow transition-colors duration-200 cursor-default"
+                        style="animation-delay: 200ms;">
+                        <i class="fab fa-js text-2xl text-vibrant-yellow"></i>
+                        <span class="brutal-label text-lg">NODE.JS</span>
                     </div>
 
-                    <div
-                        class="group relative px-6 py-3 rounded-xl neu-convex hover:neu-flat transition-all duration-300 cursor-default hover:-translate-y-1">
-                        <div
-                            class="absolute inset-0 bg-blue-500/20 blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl">
-                        </div>
-                        <div class="relative flex items-center gap-3">
-                            <i class="fab fa-microsoft text-blue-500 text-xl"></i>
-                            <span class="font-semibold text-lg">Blazor / MVC</span>
-                        </div>
+                    <div class="brutal-card p-6 flex items-center gap-4 stagger-item hover:bg-blue-500 hover:text-white transition-colors duration-200 cursor-default"
+                        style="animation-delay: 300ms;">
+                        <i class="fab fa-microsoft text-2xl text-blue-500"></i>
+                        <span class="brutal-label text-lg">BLAZOR / MAUI</span>
                     </div>
 
-                    <div
-                        class="group relative px-6 py-3 rounded-xl neu-convex hover:neu-flat transition-all duration-300 cursor-default hover:-translate-y-1">
-                        <div
-                            class="absolute inset-0 bg-green-500/20 blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl">
-                        </div>
-                        <div class="relative flex items-center gap-3">
-                            <i class="fas fa-database text-green-500 text-xl"></i>
-                            <span class="font-semibold text-lg">MongoDB / SQL</span>
-                        </div>
+                    <div class="brutal-card p-6 flex items-center gap-4 stagger-item hover:bg-vibrant-green hover:text-white transition-colors duration-200 cursor-default"
+                        style="animation-delay: 400ms;">
+                        <i class="fas fa-database text-2xl text-vibrant-green"></i>
+                        <span class="brutal-label text-lg">MONGODB / SQL</span>
                     </div>
 
-                    <div
-                        class="group relative px-6 py-3 rounded-xl neu-convex hover:neu-flat transition-all duration-300 cursor-default hover:-translate-y-1">
-                        <div
-                            class="absolute inset-0 bg-purple-500/20 blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl">
-                        </div>
-                        <div class="relative flex items-center gap-3">
-                            <i class="fas fa-dharmachakra text-purple-500 text-xl"></i>
-                            <span class="font-semibold text-lg">Kubernetes</span>
-                        </div>
+                    <div class="brutal-card p-6 flex items-center gap-4 stagger-item hover:bg-purple-500 hover:text-white transition-colors duration-200 cursor-default"
+                        style="animation-delay: 500ms;">
+                        <i class="fas fa-dharmachakra text-2xl text-purple-500"></i>
+                        <span class="brutal-label text-lg">KUBERNETES</span>
                     </div>
 
-                    <div
-                        class="group relative px-6 py-3 rounded-xl neu-convex hover:neu-flat transition-all duration-300 cursor-default hover:-translate-y-1">
-                        <div
-                            class="absolute inset-0 bg-orange-500/20 blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl">
-                        </div>
-                        <div class="relative flex items-center gap-3">
-                            <i class="fas fa-infinity text-orange-500 text-xl"></i>
-                            <span class="font-semibold text-lg">CI/CD</span>
-                        </div>
+                    <div class="brutal-card p-6 flex items-center gap-4 stagger-item hover:bg-vibrant-orange hover:text-white transition-colors duration-200 cursor-default"
+                        style="animation-delay: 600ms;">
+                        <i class="fas fa-infinity text-2xl text-vibrant-orange"></i>
+                        <span class="brutal-label text-lg">CI/CD</span>
                     </div>
-                    <div
-                        class="group relative px-6 py-3 rounded-xl neu-convex hover:neu-flat transition-all duration-300 cursor-default hover:-translate-y-1">
-                        <div
-                            class="absolute inset-0 bg-cyan-400/20 blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl">
-                        </div>
-                        <div class="relative flex items-center gap-3">
-                            <i class="fas fa-mobile-alt text-cyan-400 text-xl"></i>
-                            <span class="font-semibold text-lg">Flutter</span>
-                        </div>
+
+                    <div class="brutal-card p-6 flex items-center gap-4 stagger-item hover:bg-primary hover:text-white transition-colors duration-200 cursor-default"
+                        style="animation-delay: 700ms;">
+                        <i class="fas fa-mobile-alt text-2xl text-primary"></i>
+                        <span class="brutal-label text-lg">FLUTTER</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- CTA / Footer -->
-        <footer id="contact" class="py-20 relative bg-background">
-            <div class="max-w-[1200px] mx-auto px-8 relative z-10">
-                <div class="neu-flat p-12 text-center relative overflow-hidden reveal">
-                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-[80px]"></div>
-                    <div class="absolute bottom-0 left-0 w-64 h-64 bg-secondary/10 rounded-full blur-[80px]"></div>
+        <!-- Contact / Footer -->
+        <footer id="contact" class="py-20 bg-surface-alt relative">
+            <div class="max-w-[1200px] mx-auto px-6 md:px-8">
+                <div class="brutal-card-primary p-12 text-center reveal">
+                    <!-- Decorative shapes -->
+                    <div class="absolute top-4 right-4 w-12 h-12 bg-vibrant-yellow border-4 border-border -rotate-12">
+                    </div>
+                    <div class="absolute bottom-4 left-4 w-8 h-8 bg-secondary border-4 border-border rotate-6"></div>
 
-                    <h2 class="text-3xl md:text-5xl font-bold font-display mb-8">Ready to innovate together?</h2>
+                    <h2 class="brutal-heading-lg text-white mb-8">READY TO INNOVATE<br>TOGETHER?</h2>
 
+                    <!-- CTA Buttons -->
                     <div class="flex flex-wrap justify-center gap-4 mb-12">
                         <a href="mailto:jianyilim@gmail.com"
-                            class="neu-btn-primary hover:scale-105 transition-transform duration-300">
-                            Say Hello
+                            class="brutal-btn-secondary bg-white hover:bg-vibrant-yellow">
+                            SAY HELLO
                         </a>
                         <a href="content/Lim%20Jianyi%20(2025).pdf" download="Lim_Jianyi_Resume_2025.pdf"
-                            target="_blank"
-                            class="px-8 py-3 rounded-full font-semibold neu-convex hover:text-primary transition-colors">
-                            Download Resume
+                            target="_blank" class="brutal-btn-secondary bg-white hover:bg-vibrant-yellow">
+                            DOWNLOAD RESUME
                         </a>
                     </div>
 
-                    <div class="flex flex-wrap justify-center gap-8 text-text-secondary text-sm">
+                    <!-- Contact Links -->
+                    <div class="flex flex-wrap justify-center gap-6 text-white/90 brutal-body">
                         <a href="mailto:jianyilim@gmail.com"
-                            class="hover:text-primary transition-colors flex items-center gap-2">
+                            class="flex items-center gap-2 hover:text-vibrant-yellow transition-colors">
                             <i class="fas fa-envelope text-lg"></i> jianyilim@gmail.com
                         </a>
-                        <a href="tel:+60178788187" class="hover:text-primary transition-colors flex items-center gap-2">
+                        <a href="tel:+60178788187"
+                            class="flex items-center gap-2 hover:text-vibrant-yellow transition-colors">
                             <i class="fas fa-phone text-lg"></i> +60178788187
                         </a>
                         <span class="flex items-center gap-2">
                             <i class="fas fa-map-marker-alt text-lg"></i> Kuala Lumpur
                         </span>
                         <a href="https://www.linkedin.com/in/jianyi-lim-88a48b197/" target="_blank"
-                            class="hover:text-primary transition-colors flex items-center gap-2">
+                            class="flex items-center gap-2 hover:text-vibrant-yellow transition-colors">
                             <i class="fab fa-linkedin text-lg"></i> LinkedIn
                         </a>
                     </div>
                 </div>
-                <div class="text-center mt-12 text-text-secondary text-sm">
-                    © 2026 Lim Jianyi. Crafted with creativity.
+
+                <!-- Copyright -->
+                <div class="text-center mt-12 brutal-body text-text-secondary">
+                    © 2026 Lim Jianyi.
                 </div>
             </div>
         </footer>
     </main>
 
     <script src="script.js"></script>
+    <script>
+        // Mobile navigation toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileNav = document.getElementById('mobile-nav');
+        const mobileNavOverlay = document.getElementById('mobile-nav-overlay');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        function openMobileNav() {
+            mobileNav.classList.remove('hidden');
+            mobileMenuBtn.setAttribute('aria-expanded', 'true');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMobileNav() {
+            mobileNav.classList.add('hidden');
+            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        }
+
+        mobileMenuBtn?.addEventListener('click', openMobileNav);
+        mobileMenuClose?.addEventListener('click', closeMobileNav);
+        mobileNavOverlay?.addEventListener('click', closeMobileNav);
+        mobileNavLinks.forEach(link => link.addEventListener('click', closeMobileNav));
+    </script>
 </body>
 
 </html>
